@@ -48,7 +48,9 @@
     <Compile Include="RepositorioProduto.cs" />
     <Compile Include="RepositorioSupermercado.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Database\strutura.sql" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{10cab267-6ca8-4af0-9aa4-664b6f353702}</Project>

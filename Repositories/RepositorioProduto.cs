@@ -63,7 +63,7 @@ namespace Repositories
             return id;
         }
 
-        public Supermercado ObterPeloId(int id)
+        public Produto ObterPeloId(int id)
         {
             comando = Conexao.ObterConexao();
             comando.CommandText = @"SELECT * FROM produtos WHERE id = @ID AND registro_ativo = 1";
