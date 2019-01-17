@@ -45,6 +45,7 @@
     <Compile Include="Database\Conexao.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioProduto.cs" />
     <Compile Include="RepositorioSupermercado.cs" />
   </ItemGroup>
   <ItemGroup />

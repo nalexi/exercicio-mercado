@@ -20,8 +20,8 @@ namespace Repositories
         {
             comando = Conexao.ObterConexao();
             comando.CommandText = @"UPDATE supermercados SET
-                                    cnpj = @CNPJ
-                                    nome = @NOME
+                                    cnpj = @CNPJ,
+                                    nome = @NOME,
                                     faturamento = @FATURAMENTO
                                     WHERE id = @ID";
             comando.Parameters.AddWithValue("@CNPJ", supermercado.Cnpj);
