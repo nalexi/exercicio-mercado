@@ -1,0 +1,21 @@
+﻿@{
+    @Model  Models.Supermercado supermercado = ViewBag.Supermercado;
+}
+<form method="post" action="/supermercado/update">
+    <input type="hidden" name="supermercado.Id" value="@supermercado.Id" />
+        <div class="form-group">
+            <label for="campo-cnpj">Cnpj</label>
+            <input class="form-control" type="text" id="campo-cnpj" name="supermercado.Cnpj" value="@supermercado.Cnpj" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="campo-nome">Nome</label>
+            <input class="form-control" type="text" id="campo-nome" name="supermercado.Nome" value="@supermercado.Nome" required="required" />
+        </div>
+        <div class="form-group">
+            <label for="campo-faturamento">Faturamento</label>
+            <input class="form-control" type="number" id="campo-faturamento" name="supermercado.Faturamento" value="@supermercado.Faturamento" required="required" />
+        </div>
+        <div class="float-right mb-4">
+            <button class="btn btn-success" type="submit" value="salvar">Salvar</button>
+        </div>
+    </form>

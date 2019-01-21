@@ -1,0 +1,54 @@
+﻿<form method="post" action="/produto/update">
+    <input type="hidden" name="produto.Id" value="@ViewBag.Produto.Id" />
+    <div class="form-group">
+        <label for="campo-supermercado">Supermercados</label>
+        <select class="form-control" id="campo-supermercado" name="produto.IdSupermercado">
+            @foreach (Models.Supermercado supermercado in ViewBag.Supermercados)
+            {
+                if (supermercado.Id == ViewBag.Produto.IdSupermercado)
+                {
+                    <option value="@supermercado.Id" selected="selected">@supermercado.Nome</option>
+
+                }
+                else
+                {
+                    <option value="@supermercado.Id">@supermercado.Nome</option>
+                }
+            }
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label for="campo-fornecedor">Fornecedores</label>
+        <select class="form-control" id="campo-fornecedores" name="produto.IdFornecedor">
+            @foreach (Models.Fornecedor fornecedor in ViewBag.Fornecedores)
+            {
+                if (fornecedor.Id == ViewBag.Produto.IdFornecedor)
+                {
+                    <option value="@fornecedor.Id" selected="selected">@fornecedor.NomeFantasia</option>
+
+                }
+                else
+                {
+                    <option value="@fornecedor.Id">@fornecedor.NomeFantasia</option>
+                }
+            }
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label for="campo-nome">Nome</label>
+        <input class="form-control" type="text" id="campo-nome" name="produto.Nome" value="@ViewBag.Produto.Nome" required="required" />
+    </div>
+    <div class="form-group">
+        <label for="campo-peso">Peso</label>
+        <input class="form-control" type="text" id="campo-peso" name="produto.Peso" value="@ViewBag.Produto.Peso" required="required" />
+    </div>
+    <div class="form-group">
+        <label for="campo-preco">Preço</label>
+        <input class="form-control" type="number" id="campo-preco" name="produto.Preco" value="@ViewBag.Produto.Preco" required="required" />
+    </div>
+    <div class="float-right">
+        <button class="btn btn-primary" type="submit" value="Salvar"> Salvar</button>
+    </div>
+</form>

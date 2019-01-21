@@ -1,0 +1,21 @@
+﻿@{ 
+    @Model Models.Fornecedor fornecedor = ViewBag.Fornecedor;
+}
+<form method="post" action="/fornecedor/update">
+    <input type="hidden" name="fornecedor.Id" value="@fornecedor.Id" />
+    <div class="form-group">
+        <label for="campo-razao-social">Razao Social</label>
+        <input class="form-control" type="text" id="campo-razao-social" value="@fornecedor.RazaoSocial" name="fornecedor.RazaoSocial" required="required" />
+    </div>
+    <div class="form-group">
+        <label for="campo-nome-fantasia">Nome Fantasia</label>
+        <input class="form-control" type="text" id="campo-nome-fantasia" value="@fornecedor.NomeFantasia" name="fornecedor.NomeFantasia" required="required" />
+    </div>
+    <div class="form-group">
+        <label for="campo-inscricao-estadual">Inscrição Estadual</label>
+        <input class="form-control" type="text" id="campo-inscricao-estadual" value="@fornecedor.InscricaoEstadual" name="fornecedor.Inscricaoestadual" required="required" />
+    </div>
+    <div class="float-right mb-4">
+        <button class="btn btn-success" type="submit" value="salvar">Salvar</button>
+    </div>
+</form>

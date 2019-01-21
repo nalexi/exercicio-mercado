@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    class RepositorioSupermercado : IRepositorio<Supermercado>
-
+    public class RepositorioSupermercado : IRepositorio<Supermercado>
     {
         private SqlCommand comando;
 
@@ -27,6 +26,7 @@ namespace Repositories
             comando.Parameters.AddWithValue("@CNPJ", supermercado.Cnpj);
             comando.Parameters.AddWithValue("@NOME", supermercado.Nome);
             comando.Parameters.AddWithValue("@FATURAMENTO", supermercado.Faturamento);
+            comando.Parameters.AddWithValue("@ID", supermercado.Id);
             comando.ExecuteNonQuery();
             comando.Connection.Close();
         }
@@ -46,7 +46,7 @@ namespace Repositories
             comando.CommandText = @"INSERT INTO supermercados
                                     (cnpj, nome, faturamento, registro_ativo)
                                     OUTPUT INSERTED.ID
-                                    VALUES (@CNPJ, @NOME, @FATURAMENTO, 1";
+                                    VALUES (@CNPJ, @NOME, @FATURAMENTO, 1)";
             comando.Parameters.AddWithValue("@CNPJ", supermercado.Cnpj);
             comando.Parameters.AddWithValue("@NOME", supermercado.Nome);
             comando.Parameters.AddWithValue("@FATURAMENTO", supermercado.Faturamento);
@@ -78,7 +78,7 @@ namespace Repositories
                 supermercado.Faturamento = Convert.ToDecimal(row["faturamento"].ToString());
             }
             comando.Connection.Close();
-            return supermercado != null ? supermercado:null;
+            return supermercado != null ? supermercado : null;
         }
 
         public List<Supermercado> ObterTodos()

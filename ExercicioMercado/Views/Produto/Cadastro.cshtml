@@ -1,0 +1,37 @@
+﻿<form action="/produto/store" method="post">
+    <div class="form-group">
+        <label for="campo-supermercado">Supermercado</label>
+        <select class="form-control" id="campo-supermercado" name="produto.IdSupermercado">
+            <option disabled="disabled" selected="selected">Selecione um Mercado</option>
+            @foreach (Models.Supermercado supermercado in ViewBag.Supermercados)
+            {
+                <option value="@supermercado.Id">@supermercado.Nome</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="campo-fornecedor">Fornecedores</label>
+        <select class="form-control" id="campo-fornecedor" name="produto.IdFornecedor">
+            <option disabled="disabled" selected="selected">Selecione um Fornecedor</option>
+            @foreach (Models.Fornecedor fornecedor in ViewBag.Fornecedores)
+            {
+                <option value="@fornecedor.Id">@fornecedor.NomeFantasia</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="campo-nome">Nome</label>
+        <input class="form-control" type="text" id="campo-nome" name="produto.Nome" required="required" />
+    </div>
+    <div class="form-group">
+        <label for="campo-peso">Peso</label>
+        <input class="form-control" type="text" id="campo-peso" name="produto.Peso" required="required" />
+    </div>
+    <div class="form-group">
+        <label for="campo-preco">Preço</label>
+        <input class="form-control" type="number" id="campo-preco" name="produto.Preco" required="required" />
+    </div>
+    <div class="float-right mb-4">
+        <button class="btn btn-success" type="submit" value="salvar"> Salvar</button>
+    </div>
+</form>

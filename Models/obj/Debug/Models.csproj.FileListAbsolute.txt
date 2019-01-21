@@ -1,0 +1,6 @@
+C:\Users\nlasa\source\repos\ExercicioMercado\Models\bin\Debug\Models.dll
+C:\Users\nlasa\source\repos\ExercicioMercado\Models\bin\Debug\Models.pdb
+C:\Users\nlasa\source\repos\ExercicioMercado\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\nlasa\source\repos\ExercicioMercado\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\nlasa\source\repos\ExercicioMercado\Models\obj\Debug\Models.dll
+C:\Users\nlasa\source\repos\ExercicioMercado\Models\obj\Debug\Models.pdb

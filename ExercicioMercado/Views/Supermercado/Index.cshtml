@@ -1,0 +1,47 @@
+﻿<h3 class="text-center text-info">Supermercados</h3>
+<div class="row mb-2">
+    <div class="col-12">
+        <div class="float-right">
+            <a class="btn btn-primary" href="/supermercado/cadastro"> Novo Supermercado</a>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th class="coluna-codigo">Codigo</th>
+            <th class="coluna-cnpj">Cnpj</th>
+            <th class="coluna-nome">Nome</th>
+            <th class="coluna-faturamento">Faturamento</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Models.Supermercado supermercado in ViewBag.Supermercados)
+        {
+            <tr>
+                <td>@supermercado.Id</td>
+                <td>@supermercado.Cnpj</td>
+                <td>@supermercado.Nome</td>
+                <td>@supermercado.Faturamento</td>
+                <td>
+                    <a href="/supermercado/editar/@supermercado.Id" class="text-success mr-2"
+                       data-toggle="tooltip"
+                       data-placement="top"
+                       title="Editar o Registro">Editar</a>
+                    <a href="/supermercado/delete/@supermercado.Id" class="text-danger">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th class="coluna-codigo">Codigo</th>
+            <th class="coluna-cnpj">Cnpj</th>
+            <th class="coluna-nome">Nome</th>
+            <th class="coluna-faturamento">Faturamento</th>
+            <th>Ação</th>
+        </tr>
+    </tfoot>
+</table>
+

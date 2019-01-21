@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repositories.Database
 {
-    class Conexao
+    public class Conexao
     {
         private static readonly string ConnectionString;
         
@@ -22,7 +22,9 @@ namespace Repositories.Database
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
             return comando;
         }
+        // TODO: Colocar no arquivo web.config
     }
 }
